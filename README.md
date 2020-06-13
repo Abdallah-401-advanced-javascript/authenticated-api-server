@@ -1,14 +1,14 @@
-# LAB - 14
+# LAB - 15
 <!-- ## Project: Project Name Here -->
-## OAuth Server
+## Final Project: API Server
 
 ### Author: Abdallah Obaid
 
 ### Links and Resources
 
-* [submission PR](https://github.com/Abdallah-401-advanced-javascript/auth-server/pull/4/)
-* [travis](https://github.com/Abdallah-401-advanced-javascript/auth-server/pull/4/checks?check_run_id=760151157)
-* [ci/cd](https://github.com/Abdallah-401-advanced-javascript/auth-server/pull/4/checks?check_run_id=760151228)
+* [submission PR](https://github.com/Abdallah-401-advanced-javascript/authenticated-api-server/pull/1)
+* [travis](https://github.com/Abdallah-401-advanced-javascript/authenticated-api-server/pull/1/checks?check_run_id=768835818)
+* [ci/cd](https://github.com/Abdallah-401-advanced-javascript/authenticated-api-server/pull/1/checks?check_run_id=768836287)
 <!-- - [back-end server url](http://xyz.com) (when applicable) -->
 <!-- * [front-end application](https://abdallah-lab-00.herokuapp.com/)  -->
 
@@ -17,7 +17,7 @@
 <!-- * [swagger](https://app.swaggerhub.com/apis/AbdallahObaid/class-06/0.1)  -->
 
 ### Modules
-#### `basic-auth-midddleware.js` , `500.js`, `404.js`, `model.js`, , `user-model.js`,`timestamp.js`, `router.js`, `oauth-middleware.js`, `bearer-auth-middleware.js`,`authorize`.
+#### `basic-auth-midddleware.js` , `500.js`, `404.js`, `model.js`, , `user-model.js`,`timestamp.js`, `router.js`, `oauth-middleware.js`, `bearer-auth-middleware.js`,`authorize`,`pro-ca-routers.js`, `categories-model.js`, `products-model.js`.
 ##### Exported Values and Methods
 
 ###### `node index.js `
@@ -42,12 +42,18 @@ This will make an authorization for the client from third-party.
 This middleware will use baerer jwt to check authorization for the client before send it to the main function in the route.
 ###### `authorize`
 This will check if the user has the privilege to access a route.
+###### `pro-ca-routers.js.js`
+This will send request to the products/categories crud handler `products-model.js`/`categories-model.js`
+###### `products-model.js`
+This will connect the main crud handler `model.js` with the products schema `products-schema.js`
+###### `categories-model.js`
+This will connect the main crud handler `model.js` with the categories schema `categories-schema.js`
 
 ### Setup
 
 #### `.env` requirements 
 PORT=3030
-MONGODB_URI=mongodb://localhost:27017/class-11-db
+MONGODB_URI=mongodb+srv://abdallah:123asdasd@cluster0-dld2x.mongodb.net/test2
 SECRET=ysecrettokenkey
 CLIENT_ID=7d4f153cec56a80adbbc
 CLIENT_SECRET=d5330f11d3fb407e0308061307cb688dac938c82
@@ -67,8 +73,12 @@ const basic = require(../'basic-auth-midddleware.js');
 const oauth = require('../oauth-middleware');
 const bearerMiddleware = require('../bearer-auth-middleware');
 const bearerMiddleware = require('../authorize');
+const productsRouter = require('../routes/products');
+const categoriesRouter = require('../routes/categories');
+const products = require('../models/products/products-model');
+const categories = require('../models/categories/categories-model');
 const Model = require('../model');
-const users = require('../models/products/users-model');
+const users = require('../models/users/users-model');
 const err500 = require('../middleware/500.js');
 const err404 = require('../middleware/404.js');
 
@@ -82,3 +92,4 @@ const err404 = require('../middleware/404.js');
 #### UML
 
 ![UML Diagram](whiteboardclass14.jpg)
+![UML Diagram](whiteboardclass09.jpg)
