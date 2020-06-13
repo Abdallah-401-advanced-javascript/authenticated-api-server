@@ -65,7 +65,7 @@ describe('Server API', ()=> {
       .post('/list')
       .send(obj)
       .then(data => {
-        expect(data.status).toBe(404);
+        expect(data.status).toBe(500);
       });
   });
 
@@ -75,7 +75,7 @@ describe('Server API', ()=> {
       .then(data => {
         // compare what the post has returned with hwat we submitted
         // console.log(data.body);
-        expect(data.status).toBe(404);
+        expect(data.status).toBe(500);
       });
   });
 });
