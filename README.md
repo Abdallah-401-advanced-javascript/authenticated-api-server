@@ -10,7 +10,7 @@
 * [travis](https://github.com/Abdallah-401-advanced-javascript/authenticated-api-server/pull/1/checks?check_run_id=768835818)
 * [ci/cd](https://github.com/Abdallah-401-advanced-javascript/authenticated-api-server/pull/1/checks?check_run_id=768836287)
 <!-- - [back-end server url](http://xyz.com) (when applicable) -->
-<!-- * [front-end application](https://abdallah-lab-00.herokuapp.com/)  -->
+* [front-end application](https://final-project-api-server.herokuapp.com/) 
 
 ### Documentation
 <!-- * [jsdoc](https://abdallah-lab-00.herokuapp.com/docs/) -->
